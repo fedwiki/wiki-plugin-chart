@@ -1,3 +1,6 @@
+last = (array) ->
+  array[array.length-1]
+
 formatTime = (time) ->
   d = new Date (if time > 10000000000 then time else time*1000)
   mo = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getMonth()]
@@ -19,7 +22,8 @@ findData = (item, thumb) ->
 
 window.plugins.chart =
   emit: (div, item) ->
-    chartElement = $('<p />').addClass('readout').appendTo(div).text(item.data.last().last())
+    [time, sample] = last(item.data)
+    chartElement = $('<p />').addClass('readout').appendTo(div).text(sample)
     captionElement = $('<p />').html(wiki.resolveLinks(item.caption)).appendTo(div)
   bind: (div, item) ->
 
