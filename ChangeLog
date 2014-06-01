@@ -12,3 +12,14 @@ Wiki Plugin - chart
   date: 2014-01-07
   changes:
     - Migrated to fedwiki GitHub organization
+
+0.2.0
+  date: 2014-05-03
+  changes:
+    - define last() and $ prefix for dom elements
+    - update devDependencies
+
+0.2.1
+  date: 2014-06-1
+  changes:
+    - add about page 
