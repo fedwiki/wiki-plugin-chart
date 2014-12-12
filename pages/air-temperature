@@ -219,7 +219,7 @@
     {
       "text": "This page includes a <i>chart</i> item that contains a time series of data samples, the most recent of which is shown in the readout. The time series is updated by a cron script. The script transmits a [http://dorkbotpdx.org/blog/wardcunningham/sensorserver_transitions_to_txtzyme Txtzyme] program over USB to an attached Teensy micro-controller. This program signals a Maxium [http://www.maxim-ic.com/datasheet/index.mvp/id/2812 DS18B20] digital thermometer  over their one-wire protocol. Return data is translated to Fahrenheit by the script and then edited into the flat-file JSON representation of this page.",
       "id": "0293850980394500",
-      "type": "paragraph"
+      "type": "html"
     },
     {
       "text": "Live data is an experiment for Federated Wiki. Although the chart can be copied to other sites, it won't update there. Is this the expected behavior? Is it the most useful?",
@@ -969,7 +969,18 @@
       "after": "098abc0983204982",
       "id": "580d0bbf59b4438d",
       "date": 1356414862672
+    },
+    {
+      "type": "edit",
+      "id": "0293850980394500",
+      "item": {
+        "text": "This page includes a <i>chart</i> item that contains a time series of data samples, the most recent of which is shown in the readout. The time series is updated by a cron script. The script transmits a [http://dorkbotpdx.org/blog/wardcunningham/sensorserver_transitions_to_txtzyme Txtzyme] program over USB to an attached Teensy micro-controller. This program signals a Maxium [http://www.maxim-ic.com/datasheet/index.mvp/id/2812 DS18B20] digital thermometer  over their one-wire protocol. Return data is translated to Fahrenheit by the script and then edited into the flat-file JSON representation of this page.",
+        "id": "0293850980394500",
+        "type": "html"
+      },
+      "date": 1418314467066
     }
   ],
-  "synopsys": "Temperature data from a live feed updated throughout the day."
+  "synopsys": "Temperature data from a live feed updated throughout the day.",
+  "plugin": "chart"
 }
