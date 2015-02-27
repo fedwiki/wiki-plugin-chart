@@ -1,3 +1,10 @@
+###
+ * Federated Wiki : Chart Plugin
+ *
+ * Licensed under the MIT license.
+ * https://github.com/fedwiki/wiki-plugin-chart/blob/master/LICENSE.txt
+###
+
 last = (array) ->
   array[array.length-1]
 
