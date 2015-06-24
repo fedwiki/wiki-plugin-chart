@@ -5,6 +5,8 @@
  * https://github.com/fedwiki/wiki-plugin-chart/blob/master/LICENSE.txt
 ###
 
+sanitize = require 'sanitize-caja'
+
 last = (array) ->
   array[array.length-1]
 
@@ -32,7 +34,7 @@ window.plugins.chart =
   emit: ($item, item) ->
     [time, sample] = last(item.data)
     chartElement = $('<p />').addClass('readout').appendTo($item).text(sample)
-    captionElement = $('<p />').html(wiki.resolveLinks(item.caption)).appendTo($item)
+    captionElement = $('<p />').html(wiki.resolveLinks(item.caption, sanitize)).appendTo($item)
 
   bind: ($item, item) ->
 
@@ -40,6 +42,8 @@ window.plugins.chart =
 
     $item.find('p:first')
       .mousemove (e) ->
+        if typeof e.offsetX == "undefined"
+          e.offsetX = e.pageX - $(e.target).offset().left
         return unless (data = item.data[Math.floor(item.data.length * e.offsetX / e.target.offsetWidth)])?
         [time, sample] = data
         return if time == lastThumb || null == (lastThumb = time)
