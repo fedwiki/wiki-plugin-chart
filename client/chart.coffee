@@ -42,6 +42,8 @@ window.plugins.chart =
 
     $item.find('p:first')
       .mousemove (e) ->
+        if typeof e.offsetX == "undefined"
+          e.offsetX = e.pageX - $(e.target).offset().left
         return unless (data = item.data[Math.floor(item.data.length * e.offsetX / e.target.offsetWidth)])?
         [time, sample] = data
         return if time == lastThumb || null == (lastThumb = time)
