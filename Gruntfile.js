@@ -18,7 +18,7 @@ module.exports = function (grunt) {
         src: ['client/chart.coffee'],
         dest: 'client/chart.js',
         options: {
-          transform: ['coffeeify'],
+          transform: [[ 'coffeeify', { transpile: { presets: ['@babel/preset-env'] } } ]],
           browserifyOptions: {
             extensions: ".coffee"
           }
