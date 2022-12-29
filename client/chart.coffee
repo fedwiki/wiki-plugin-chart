@@ -41,7 +41,7 @@ window.plugins.chart =
     lastThumb = null
 
     $item.find('p:first')
-      .mousemove (e) ->
+      .on 'mousemove', (e) ->
         if typeof e.offsetX == "undefined"
           e.offsetX = e.pageX - $(e.target).offset().left
         return unless (data = item.data[Math.floor(item.data.length * e.offsetX / e.target.offsetWidth)])?
@@ -49,7 +49,7 @@ window.plugins.chart =
         return if time == lastThumb || null == (lastThumb = time)
         display $item, data
         $item.trigger('thumb', +time)
-      .dblclick ->
+      .on 'dblclick', () ->
         wiki.dialog "JSON for #{item.caption}", $('<pre/>').text(JSON.stringify(item.data, null, 2))
 
     $('.main').on 'thumb', (evt, thumb) ->
