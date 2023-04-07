@@ -35,8 +35,7 @@
     "grunt-browserify": "^6.0.0",
     "grunt-contrib-coffee": "^2.1.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-git-authors": "~3",
-    "sanitize-caja": "*"
+    "grunt-git-authors": "~3"
   },
   "license": "MIT",
   "repository": {
@@ -45,8 +44,5 @@
   },
   "bugs": {
     "url": "https://github.com/fedwiki/wiki-plugin-chart/issues"
-  },
-  "engines": {
-    "node": ">=0.10"
   }
 }
