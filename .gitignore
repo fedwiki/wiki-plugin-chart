@@ -1,4 +1,4 @@
-/*/*.js
-/*/*.map
+client/chart.*
 node_modules
 npm-debug.log
+meta-client.json
